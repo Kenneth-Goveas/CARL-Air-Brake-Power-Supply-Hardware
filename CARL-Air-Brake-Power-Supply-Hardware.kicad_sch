@@ -1644,11 +1644,11 @@
         )
       )
     )
-    (symbol "Local_Power:VBUS" (power) (in_bom no) (on_board no)
+    (symbol "Local_Power:VMCU" (power) (in_bom no) (on_board no)
       (property "Reference" "#PWR" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Value" "VBUS" (at 0 3.81 0)
+      (property "Value" "VMCU" (at 0 3.81 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -1657,7 +1657,7 @@
       (property "Datasheet" "" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "VBUS_0_1"
+      (symbol "VMCU_0_1"
         (polyline
           (pts
             (xy 0 0)
@@ -1667,7 +1667,7 @@
           (fill (type none))
         )
       )
-      (symbol "VBUS_1_1"
+      (symbol "VMCU_1_1"
         (polyline
           (pts
             (xy 0 2.54)
@@ -1680,7 +1680,7 @@
           (fill (type outline))
         )
         (pin power_in line (at 0 0 90) (length 0) hide
-          (name "VBUS" (effects (font (size 1.27 1.27))))
+          (name "VMCU" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
       )
@@ -3750,7 +3750,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 5328b00d-fb2d-46e6-b429-275ad089aafa)
   )
-  (label "VBUS_ICSP" (at 26.67 114.3 90) (fields_autoplaced)
+  (label "VMCU_ICSP" (at 26.67 114.3 90) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 5337e5ab-b22d-41aa-8e20-cabadd6a9c05)
   )
@@ -3774,7 +3774,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 79c6e161-7012-4aa4-8ffd-22d6ed8c9829)
   )
-  (label "VBUS_USB" (at 26.67 152.4 90) (fields_autoplaced)
+  (label "VMCU_USB" (at 26.67 152.4 90) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 7d8d587b-5ded-4a1a-bab4-176ebebe71e1)
   )
@@ -3913,6 +3913,31 @@
     )
   )
 
+  (symbol (lib_id "Local_Power:VMCU") (at 276.86 124.46 0) (unit 1)
+    (in_bom no) (on_board no) (dnp no)
+    (uuid 05d23a7a-1dae-4480-b29f-945c07442c06)
+    (property "Reference" "#PWR054" (at 276.86 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "VMCU" (at 276.86 120.65 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 276.86 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 276.86 124.46 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 120843b8-b24e-4bcb-a04a-9c6c234b9cd2))
+    (instances
+      (project "CARL-Air-Brake-Power-Supply-Hardware"
+        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
+          (reference "#PWR054") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Local_Capacitor:Cap") (at 266.7 52.07 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 07841414-f942-4473-b34f-d5aac104f101)
@@ -3987,6 +4012,31 @@
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
           (reference "C15") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Local_Power:VMCU") (at 198.12 22.86 0) (unit 1)
+    (in_bom no) (on_board no) (dnp no)
+    (uuid 0e7c62b5-ab1d-45ea-92f2-cd1e0373912a)
+    (property "Reference" "#PWR026" (at 198.12 22.86 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "VMCU" (at 198.12 19.05 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 198.12 22.86 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 198.12 22.86 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid aa362647-258b-4a0b-be2b-0f3470a3e2a8))
+    (instances
+      (project "CARL-Air-Brake-Power-Supply-Hardware"
+        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
+          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -4337,6 +4387,31 @@
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
           (reference "R18") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Local_Power:VMCU") (at 101.6 135.89 0) (unit 1)
+    (in_bom no) (on_board no) (dnp no)
+    (uuid 2a72e052-75a3-42f6-a840-d32e9935eeed)
+    (property "Reference" "#PWR015" (at 101.6 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "VMCU" (at 101.6 132.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 101.6 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 101.6 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 4f287a78-b7a5-4bbf-8f48-fc7d332ee2fc))
+    (instances
+      (project "CARL-Air-Brake-Power-Supply-Hardware"
+        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
+          (reference "#PWR015") (unit 1)
         )
       )
     )
@@ -4936,26 +5011,26 @@
     )
   )
 
-  (symbol (lib_id "Local_Power:VBUS") (at 91.44 135.89 0) (unit 1)
+  (symbol (lib_id "Local_Power:VMCU") (at 97.79 114.3 0) (unit 1)
     (in_bom no) (on_board no) (dnp no)
-    (uuid 40bb380a-8a1a-422c-b3d8-09752c011ff7)
-    (property "Reference" "#PWR014" (at 91.44 135.89 0)
+    (uuid 4023f26f-9117-4829-82d0-10ee9ec19c04)
+    (property "Reference" "#PWR042" (at 97.79 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "VBUS" (at 91.44 132.08 0)
+    (property "Value" "VMCU" (at 97.79 110.49 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 91.44 135.89 0)
+    (property "Footprint" "" (at 97.79 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 91.44 135.89 0)
+    (property "Datasheet" "" (at 97.79 114.3 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a17358a2-3aff-4b21-a096-554930c2e049))
+    (pin "1" (uuid 66c0566b-0f95-4786-a381-f40237a845b8))
     (instances
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR014") (unit 1)
+          (reference "#PWR042") (unit 1)
         )
       )
     )
@@ -5033,6 +5108,31 @@
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
           (reference "C9") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Local_Power:VMCU") (at 91.44 135.89 0) (unit 1)
+    (in_bom no) (on_board no) (dnp no)
+    (uuid 47ebe357-7545-41bf-9fa3-46569afd623d)
+    (property "Reference" "#PWR014" (at 91.44 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "VMCU" (at 91.44 132.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 91.44 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 91.44 135.89 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid bdf11320-9d70-4a21-a6b7-e0122616ab19))
+    (instances
+      (project "CARL-Air-Brake-Power-Supply-Hardware"
+        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
+          (reference "#PWR014") (unit 1)
         )
       )
     )
@@ -5346,56 +5446,6 @@
     )
   )
 
-  (symbol (lib_id "Local_Power:VBUS") (at 265.43 74.93 0) (unit 1)
-    (in_bom no) (on_board no) (dnp no)
-    (uuid 5d67034b-4656-4aad-be05-08d15da7377c)
-    (property "Reference" "#PWR029" (at 265.43 74.93 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VBUS" (at 265.43 71.12 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 265.43 74.93 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 265.43 74.93 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 165d10b8-5b97-449c-bd71-8784073d8c81))
-    (instances
-      (project "CARL-Air-Brake-Power-Supply-Hardware"
-        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR029") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Local_Power:VBUS") (at 97.79 114.3 0) (unit 1)
-    (in_bom no) (on_board no) (dnp no)
-    (uuid 5da1b1fb-feca-4627-8a5d-10ceab231b0d)
-    (property "Reference" "#PWR042" (at 97.79 114.3 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VBUS" (at 97.79 110.49 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 97.79 114.3 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 97.79 114.3 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 09fc8ceb-9546-4480-849d-6fed0d81a576))
-    (instances
-      (project "CARL-Air-Brake-Power-Supply-Hardware"
-        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR042") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "Local_Power:VBAT") (at 40.64 25.4 0) (unit 1)
     (in_bom no) (on_board no) (dnp no)
     (uuid 5df0b124-a427-418c-ae28-a5e7702aff2d)
@@ -5686,6 +5736,31 @@
     )
   )
 
+  (symbol (lib_id "Local_Power:VMCU") (at 36.83 90.17 0) (unit 1)
+    (in_bom no) (on_board no) (dnp no)
+    (uuid 6dcb516b-a0ff-4c1e-bcaf-32d6ed489ca8)
+    (property "Reference" "#PWR09" (at 36.83 90.17 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "VMCU" (at 36.83 86.36 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 36.83 90.17 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 36.83 90.17 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 1b4caba0-8986-4edc-a414-196bf53b0cb6))
+    (instances
+      (project "CARL-Air-Brake-Power-Supply-Hardware"
+        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
+          (reference "#PWR09") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Local_Power:VBAT") (at 60.96 62.23 0) (unit 1)
     (in_bom no) (on_board no) (dnp no)
     (uuid 6f4976c2-9346-4db8-8c1c-cd7b648a132d)
@@ -5808,31 +5883,6 @@
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
           (reference "J1") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Local_Power:VBUS") (at 198.12 22.86 0) (unit 1)
-    (in_bom no) (on_board no) (dnp no)
-    (uuid 7b183fdc-8c23-4b04-94a2-496464f463df)
-    (property "Reference" "#PWR026" (at 198.12 22.86 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VBUS" (at 198.12 19.05 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 198.12 22.86 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 198.12 22.86 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 62d4d692-2af5-4397-93ef-52adffe1b93c))
-    (instances
-      (project "CARL-Air-Brake-Power-Supply-Hardware"
-        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR026") (unit 1)
         )
       )
     )
@@ -6450,31 +6500,6 @@
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
           (reference "#PWR024") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Local_Power:VBUS") (at 276.86 124.46 0) (unit 1)
-    (in_bom no) (on_board no) (dnp no)
-    (uuid a79bd7cb-c4bc-44ee-8585-97316046c026)
-    (property "Reference" "#PWR054" (at 276.86 124.46 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VBUS" (at 276.86 120.65 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 276.86 124.46 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 276.86 124.46 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 77b4ef46-0670-4844-a398-c1c551a63758))
-    (instances
-      (project "CARL-Air-Brake-Power-Supply-Hardware"
-        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR054") (unit 1)
         )
       )
     )
@@ -7567,26 +7592,26 @@
     )
   )
 
-  (symbol (lib_id "Local_Power:VBUS") (at 101.6 135.89 0) (unit 1)
+  (symbol (lib_id "Local_Power:VMCU") (at 265.43 74.93 0) (unit 1)
     (in_bom no) (on_board no) (dnp no)
-    (uuid f9aef67e-fdf4-430b-82c8-57b2f4c7fc58)
-    (property "Reference" "#PWR015" (at 101.6 135.89 0)
+    (uuid f792b44f-312e-49f1-a086-4a36761e5cf5)
+    (property "Reference" "#PWR029" (at 265.43 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "VBUS" (at 101.6 132.08 0)
+    (property "Value" "VMCU" (at 265.43 71.12 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (at 101.6 135.89 0)
+    (property "Footprint" "" (at 265.43 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 101.6 135.89 0)
+    (property "Datasheet" "" (at 265.43 74.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid e1fe70f3-8715-4545-94fd-53f9cb012722))
+    (pin "1" (uuid e47f9ff0-492a-481f-9e24-7b02a5d5a8f3))
     (instances
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR015") (unit 1)
+          (reference "#PWR029") (unit 1)
         )
       )
     )
@@ -7612,31 +7637,6 @@
       (project "CARL-Air-Brake-Power-Supply-Hardware"
         (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
           (reference "#PWR051") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Local_Power:VBUS") (at 36.83 90.17 0) (unit 1)
-    (in_bom no) (on_board no) (dnp no)
-    (uuid fcd7e445-fc4c-4a1f-b16a-40f7db7df8ee)
-    (property "Reference" "#PWR09" (at 36.83 90.17 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "VBUS" (at 36.83 86.36 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 36.83 90.17 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (at 36.83 90.17 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 08167801-4e9a-4e71-b8d8-22492b42d0ed))
-    (instances
-      (project "CARL-Air-Brake-Power-Supply-Hardware"
-        (path "/a14588cc-c6b5-4cd2-a60d-abff4b7f3fc4"
-          (reference "#PWR09") (unit 1)
         )
       )
     )
