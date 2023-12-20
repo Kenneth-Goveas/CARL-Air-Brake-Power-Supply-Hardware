@@ -5,10 +5,9 @@ Upon properly cloning this repository according to the instructions in
 
 ```
 CARL-Air-Brake-Power-Supply-Hardware/
-|__ CARL-Air-Brake-Power-Supply-Hardware.kicad-pro
-|__ CARL-Air-Brake-Power-Supply-Hardware.kicad-prl
-|__ CARL-Air-Brake-Power-Supply-Hardware.kicad-sch
-|__ CARL-Air-Brake-Power-Supply-Hardware.kicad-pcb
+|__ CARL-Air-Brake-Power-Supply-Hardware.kicad_pro
+|__ CARL-Air-Brake-Power-Supply-Hardware.kicad_sch
+|__ CARL-Air-Brake-Power-Supply-Hardware.kicad_pcb
 |__ fp-lib-table -> ./library/fp-lib-table
 |__ sym-lib-table -> ./library/sym-lib-table
 |__ library/
@@ -28,15 +27,21 @@ CARL-Air-Brake-Power-Supply-Hardware/
     |__ flashing.md
 ```
 
-The KiCad project files are located in the root directory. The KiCad component
-library [KiCad Libraries][lib-repo] is contained as a submodule in the
-[library][lib-dir] directory. Symbolic links [fp-lib-table][fp-lnk] and
-[sym-lib-table][sym-lnk] in the root directory point to the library table files
-[fp-lib-table][fp-file] and [sym-lib-table][sym-file] in the [library][lib-dir]
-directory. These symbolic links are required for KiCad to be able to locate the
-component library.
+The KiCad project file [CARL-Air-Brake-Power-Supply-Hardware.kicad_pro][pro],
+schematic file [CARL-Air-Brake-Power-Supply-Hardware.kicad_sch][sch], and board
+file [CARL-Air-Brake-Power-Supply-Hardware.kicad_pcb][pcb] are located in the
+root directory. The KiCad component library [KiCad Libraries][lib-repo] is
+contained as a submodule in the [library][lib-dir] directory. Symbolic links
+[fp-lib-table][fp-lnk] and [sym-lib-table][sym-lnk] in the root directory point
+to the library table files [fp-lib-table][fp-file] and [sym-lib-table][sym-file]
+in the [library][lib-dir] directory. These symbolic links are required for KiCad
+to be able to locate the component library.
 
 [cln]:      ./cloning.md
+
+[pro]:      ../CARL-Air-Brake-Power-Supply-Hardware.kicad_pro
+[sch]:      ../CARL-Air-Brake-Power-Supply-Hardware.kicad_sch
+[pcb]:      ../CARL-Air-Brake-Power-Supply-Hardware.kicad_pcb
 
 [fp-lnk]:   ../fp-lib-table
 [sym-lnk]:  ../sym-lib-table
