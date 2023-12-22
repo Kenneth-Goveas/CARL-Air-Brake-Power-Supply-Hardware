@@ -15,12 +15,12 @@ repositories (for more details, see [CARL Air Brake][cab-repo]).
 ## Overview
 
 The power supply module supplies regulated power to all systems in the CARL Air
-Brake computer. Additionally, it also monitors the battery voltage and indicates
-the same on an LED array. When the battery is fully charged, all these LEDs
-light up in green. As the voltage drops, they turn red one by one. Below a
-critically low voltage, they also start flashing to indicate to the user that
-the battery needs charging. The board also contains status LEDs to indicate
-which of the onboard power lines are live.
+Brake computer. It also has status LEDs to indicate which of the onboard power
+lines are live. After being flashed with its associated software, it also
+monitors the battery voltage and indicates the same on another LED array. When
+the battery is fully charged, all these LEDs light up in green. As the voltage
+drops, they turn red one by one. When all these LEDs turn red, they also start
+flashing to indicate to the user that the battery needs charging.
 
 ## Battery
 
