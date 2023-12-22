@@ -8,6 +8,19 @@ CARL-Air-Brake-Power-Supply-Hardware/
 |__ CARL-Air-Brake-Power-Supply-Hardware.kicad_pro
 |__ CARL-Air-Brake-Power-Supply-Hardware.kicad_sch
 |__ CARL-Air-Brake-Power-Supply-Hardware.kicad_pcb
+|__ production/
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.bom.csv
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.boardoutline.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.toplayer.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.bottomlayer.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.topsoldermask.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.bottomsoldermask.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.toppaste.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.bottompaste.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.topsilkscreen.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.bottomsilkscreen.ger
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.drills_pth.xln
+|   |__ CARL-Air-Brake-Power-Supply-Hardware.holes_npth.xln
 |__ fp-lib-table -> ./library/fp-lib-table
 |__ sym-lib-table -> ./library/sym-lib-table
 |__ library/
@@ -27,21 +40,19 @@ CARL-Air-Brake-Power-Supply-Hardware/
     |__ flashing.md
 ```
 
-The KiCad project file [CARL-Air-Brake-Power-Supply-Hardware.kicad_pro][pro],
-schematic file [CARL-Air-Brake-Power-Supply-Hardware.kicad_sch][sch], and board
-file [CARL-Air-Brake-Power-Supply-Hardware.kicad_pcb][pcb] are located in the
-root directory. The KiCad component library [KiCad Libraries][lib-repo] is
-contained as a submodule in the [library][lib-dir] directory. Symbolic links
-[fp-lib-table][fp-lnk] and [sym-lib-table][sym-lnk] in the root directory point
-to the library table files [fp-lib-table][fp-file] and [sym-lib-table][sym-file]
-in the [library][lib-dir] directory. These symbolic links are required for KiCad
-to be able to locate the component library.
+The KiCad project, schematic, and board files are located in the root directory.
+The bill of materials file, and the gerber and drill files for production are
+located in the [production][prod-dir] directory. The KiCad component library
+[KiCad Libraries][lib-repo] is contained as a submodule in the
+[library][lib-dir] directory. Symbolic links [fp-lib-table][fp-lnk] and
+[sym-lib-table][sym-lnk] in the root directory point to the library table files
+[fp-lib-table][fp-file] and [sym-lib-table][sym-file] in the [library][lib-dir]
+directory. These symbolic links are required for KiCad to be able to locate the
+component library.
 
 [cln]:      ./cloning.md
 
-[pro]:      ../CARL-Air-Brake-Power-Supply-Hardware.kicad_pro
-[sch]:      ../CARL-Air-Brake-Power-Supply-Hardware.kicad_sch
-[pcb]:      ../CARL-Air-Brake-Power-Supply-Hardware.kicad_pcb
+[prod-dir]: ../production
 
 [fp-lnk]:   ../fp-lib-table
 [sym-lnk]:  ../sym-lib-table
