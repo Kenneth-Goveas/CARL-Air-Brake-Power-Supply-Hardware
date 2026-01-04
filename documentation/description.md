@@ -15,24 +15,22 @@ repositories (for more details, see [CARL Air Brake][cab-repo]).
 ## Overview
 
 The power supply module supplies regulated power to all systems in the CARL Air
-Brake computer. It also has status LEDs to indicate which of the onboard power
-lines are live. After being flashed with its associated software, it also
-monitors the battery voltage and indicates the same on another LED array. When
-the battery is fully charged, all these LEDs light up in green. As the voltage
-drops, they turn red one by one. When all these LEDs turn red, they also start
-flashing to indicate to the user that the battery needs charging.
+Brake computer. It also has status LEDs to indicate which of its onboard power
+lines are live. An onboard microcontroller is connected to an array of
+dual-color LEDs. After being flashed with its associated software, it monitors
+the battery voltage and indicates the same on this LED array. When the battery
+is fully charged, all these LEDs light up in green. As the voltage drops, they
+turn red one by one. When all these LEDs turn red, they also start flashing to
+indicate to the user that the battery needs charging.
 
 ## Battery
 
-The power supply module is intended for use with a lithium polymer battery with
-the following specifications.
-
-| **Specification**             | **Value** |
-| ----------------------------- | --------- |
-| Cells in series               | 3         |
-| Nominal voltage               | 11.1V     |
-| Fully charged voltage         | 12.6V     |
-| Continuous discharge current  | >1.5A     |
+The power supply module is intended for use with a 3S lithium polymer battery.
+This means that the nominal and fully charged battery voltages must be 11.1V and
+12.6V respectively. Additionally, the battery must be capable of delivering a
+continuous current at least 3A more than the requirement of the brake actuator.
+For details about the intended brake actuator, see
+[CARL Air Brake Peripheral Devices Hardware][cab-pdev-hw-repo].
 
 ## Components
 
@@ -70,34 +68,39 @@ the actual voltages to deviate slightly.
 | **Name**  | **Description**                           | **Voltage**     |
 | --------- | ----------------------------------------- | --------------- |
 | VBAT      | Positive terminal of battery.             | Battery voltage |
-| +3.3V     | Output of 3.3V regulator on Raspberry Pi. | 3.3V            |
-| +5V       | Output of onboard 5V regulator.           | 5V              |
-| +6V       | Output of onboard 6V regulator.           | 6V              |
+| 3.3V      | Output of 3.3V regulator on Raspberry Pi. | 3.3V            |
+| 5V        | Output of onboard 5V regulator.           | 5V              |
+| 6V        | Output of onboard 6V regulator.           | 6V              |
 | VMCU      | Power line for onboard microcontroller.   | 5V              |
 
-When the battery is connected and the switch turned on, the VBAT, VMCU, +5V, and
-+6V lines become live. If, in addition to the battery, the Raspberry Pi is also
-connected, then the +3.3V line also becomes live. If any or both of the two
+When the battery is connected and the switch turned on, the VBAT, VMCU, 5V, and
+6V lines become live. If, in addition to the battery, the Raspberry Pi is also
+connected, then the 3.3V line also becomes live. If any or both of the two
 programming cables are connected, the VMCU line becomes live regardless of
 whether or not the battery is connected. Thus, the VMCU line has three power
 sources - the battery, and two programming cables. It is safe to simultaneously
 connect more than one of these power sources as the board has protection diodes
 that will prevent any short circuit.
 
-The Raspberry Pi draws power from the +5V line. The Raspberry Pi has an onboard
-3.3V regulator which supplies power to the +3.3V line. The peripheral devices
-module draws power from the +3.3V, +5V, and +6V lines. The VMCU line supplies
-power to the onboard microcontroller of the power supply module, and its
-associated circuitry. Each regulated power line is also connected to a separate
-status LED (D11-D14) to visually indicate which lines are live. Additionally,
-all power and GND lines are connected to separate test points (TP1-TP6) for
-measuring their voltages with a multimeter.
+The Raspberry Pi draws power from the 5V line and supplies power to the 3.3V
+line. The peripheral devices module draws power from the 5V and 6V lines. The
+VMCU line supplies power to the onboard microcontroller. Each regulated power
+line is also connected to a separate status LED (D11-D14) to visually indicate
+which lines are live. Additionally, all power and GND lines are connected to
+separate test points (TP1-TP6) for measuring their voltages with a multimeter.
+For brevity, status LEDs and test points are omitted from the above diagram. The
+3.3V line isn't used by any onboard device. Only its status LED is connected to
+it. This indication is still useful, however, as the peripheral devices module
+draws power directly from the Raspberry Pi through the 3.3V line.
 
-The onboard microcontroller is programmable from the two ports J2 and J3. When
-flashed with the appropriate software (see [flashing.md][fsh]), it measures the
-battery voltage and accordingly drives the indication LEDs (D6-D10), resulting
-in the behavior described in [Overview](#overview).
+The onboard microcontroller is programmable from the ICSP port J2 and the USB
+port J3. The ICSP connection is required only once, for installing the
+bootloader. Subsequently, the microcontroller can be conveniently programmed
+from the USB port. When flashed with the appropriate software (see
+[flashing.md][fsh]), it measures the battery voltage and accordingly drives the
+indication LEDs (D6-D10).
 
-[fsh]:      ./flashing.md
+[fsh]:              ./flashing.md
 
-[cab-repo]: https://github.com/Kenneth-Goveas/CARL-Air-Brake
+[cab-repo]:         https://github.com/Kenneth-Goveas/CARL-Air-Brake
+[cab-pdev-hw-repo]: https://github.com/Kenneth-Goveas/CARL-Air-Brake-Peripheral-Devices-Hardware

@@ -3,7 +3,7 @@
 This repository contains the electronic hardware design for the power supply
 module of the [CARL Air Brake][cab-repo] computer. The CARL Air Brake computer
 automatically controls a rocket air brake in flight, so that the vehicle attains
-an apogee at the desired altitude. The power supply module distributes
+an apogee at the desired altitude. Its power supply module distributes
 electrical power to all systems in the computer.
 
 ![Top view of the power supply module](
